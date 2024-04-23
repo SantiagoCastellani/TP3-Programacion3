@@ -17,7 +17,20 @@
             width: 254px;
         }
         .auto-style5 {
-            width: 259px;
+            width: 217px;
+            font-weight: 700;
+        }
+        .auto-style6 {
+            width: 254px;
+            height: 23px;
+        }
+        .auto-style7 {
+            width: 217px;
+            font-weight: 700;
+            height: 23px;
+        }
+        .auto-style8 {
+            height: 23px;
         }
     </style>
 </head>
@@ -81,9 +94,21 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">Nombre de Usuario</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style4">&nbsp;</td>
+                <td class="auto-style5">USUARIOS</td>
                 <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
+                <td class="auto-style4">Nombre de usuario:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="txtNombreUsuario" runat="server" Width="232px"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario">Ingresar un nombre de USUARIO</asp:RequiredFieldValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -97,20 +122,12 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style6"></td>
+                <td class="auto-style7"></td>
+                <td class="auto-style8"></td>
+                <td class="auto-style8"></td>
+                <td class="auto-style8"></td>
+                <td class="auto-style8"></td>
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
