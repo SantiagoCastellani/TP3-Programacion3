@@ -48,5 +48,10 @@ namespace TP3_Grupo5
             return localidades.Contains(loc, StringComparer.OrdinalIgnoreCase);
         }
 
+        protected void btn_Usuario_Click(object sender, EventArgs e)
+        {
+            txtContraseña1.Text = string.Empty;
+            txtContraseña2.Text = string.Empty;
+        }
     }
 }
