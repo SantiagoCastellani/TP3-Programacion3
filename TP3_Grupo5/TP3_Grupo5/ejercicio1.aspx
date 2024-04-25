@@ -114,32 +114,44 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style4">Contraseña:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="txtContraseña1" runat="server"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style6"></td>
-                <td class="auto-style7"></td>
-                <td class="auto-style8"></td>
+                <td class="auto-style6">Repetir Contraseña:</td>
+                <td class="auto-style7">
+                    <asp:TextBox ID="txtContraseña2" runat="server"></asp:TextBox>
+                </td>
+                <td class="auto-style8">
+                    <asp:CompareValidator ID="cv_Contraseña" runat="server" ControlToCompare="txtContraseña1" ControlToValidate="txtContraseña2" Display="Dynamic" ErrorMessage="CompareValidator">Las contraseñas ingresadas deben coincidir.</asp:CompareValidator>
+                </td>
                 <td class="auto-style8"></td>
                 <td class="auto-style8"></td>
                 <td class="auto-style8"></td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style4">Correo electronico:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
+                </td>
+                <td>
+                    <asp:RegularExpressionValidator ID="rev_Correo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="RegularExpressionValidator" ValidationExpression="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$">Ingrese un correo electronico valido.</asp:RegularExpressionValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style4">CP:</td>
+                <td class="auto-style5">
+                    <asp:TextBox ID="txt_CP" runat="server" MaxLength="4"></asp:TextBox>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -174,7 +186,9 @@
             </tr>
             <tr>
                 <td class="auto-style4">&nbsp;</td>
-                <td class="auto-style5">&nbsp;</td>
+                <td class="auto-style5">
+                    <asp:Button ID="btn_Usuario" runat="server" OnClick="btn_Usuario_Click" Text="Guardar Usuario" />
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
