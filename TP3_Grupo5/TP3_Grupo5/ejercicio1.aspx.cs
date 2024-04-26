@@ -48,5 +48,24 @@ namespace TP3_Grupo5
             return localidades.Contains(loc, StringComparer.OrdinalIgnoreCase);
         }
 
+        protected void btn_Usuario_Click(object sender, EventArgs e)
+        {
+            
+            string usuario = txtNombreUsuario.Text;
+            string mensaje = "Usuario " + usuario + " Registrado";
+            ScriptManager.RegisterStartupScript(this, this.GetType(), "alertScript", "alert('" + mensaje + "');", true);
+            lblBienvenida.Text = "Bienvenidx " + usuario;
+            txtContraseña1.Text = string.Empty;
+            txtContraseña2.Text = string.Empty;
+            txtNombreUsuario.Text = string.Empty;
+            txtCorreo.Text = string.Empty;
+            txtLocalidad.Text = string.Empty;
+            txt_CP.Text = string.Empty;
+        }
+
+        protected void btbInicio_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Inicio.aspx");
+        }
     }
 }
