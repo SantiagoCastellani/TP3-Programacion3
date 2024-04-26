@@ -32,6 +32,18 @@
         .auto-style8 {
             height: 23px;
         }
+        .auto-style9 {
+            width: 254px;
+            height: 33px;
+        }
+        .auto-style10 {
+            width: 217px;
+            font-weight: 700;
+            height: 33px;
+        }
+        .auto-style11 {
+            height: 33px;
+        }
     </style>
 </head>
 <body>
@@ -58,10 +70,10 @@
             <tr>
                 <td class="auto-style4">Nombre de la localidad:</td>
                 <td class="auto-style5">
-        <asp:TextBox ID="txtLocalidad" runat="server" Width="247px"></asp:TextBox>
+        <asp:TextBox ID="txtLocalidad" runat="server" Width="247px" ValidationGroup="Localidad_Group"></asp:TextBox>
                 </td>
                 <td>
-                    <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="txtLocalidad">Debe ingresar una localidad</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="rfvLocalidad" runat="server" ControlToValidate="txtLocalidad" ValidationGroup="Localidad_Group">Debe ingresar una localidad</asp:RequiredFieldValidator>
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -78,7 +90,7 @@
             <tr>
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style5">
-            <asp:Button ID="btnSelectLocalidad" runat="server" OnClick="Button1_Click" Text="Guardar Localidad" />
+            <asp:Button ID="btnSelectLocalidad" runat="server" OnClick="Button1_Click" Text="Guardar Localidad" ValidationGroup="Localidad_Group" />
                 </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -114,14 +126,16 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">Contraseña:</td>
-                <td class="auto-style5">
+                <td class="auto-style9">Contraseña:</td>
+                <td class="auto-style10">
                     <asp:TextBox ID="txtContraseña1" runat="server"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
+                <td class="auto-style11">
+                    <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtContraseña1">Debe Ingresar la Contraseña</asp:RequiredFieldValidator>
+                </td>
+                <td class="auto-style11"></td>
+                <td class="auto-style11"></td>
+                <td class="auto-style11"></td>
             </tr>
             <tr>
                 <td class="auto-style6">Repetir Contraseña:</td>
@@ -129,6 +143,7 @@
                     <asp:TextBox ID="txtContraseña2" runat="server"></asp:TextBox>
                 </td>
                 <td class="auto-style8">
+                    <asp:RequiredFieldValidator ID="rfvRepeatPassword" runat="server" ControlToValidate="txtContraseña2">Por favor, repita la Contraseña.</asp:RequiredFieldValidator>
                     <asp:CompareValidator ID="cv_Contraseña" runat="server" ControlToCompare="txtContraseña1" ControlToValidate="txtContraseña2" Display="Dynamic" ErrorMessage="CompareValidator">Las contraseñas ingresadas deben coincidir.</asp:CompareValidator>
                 </td>
                 <td class="auto-style8"></td>
@@ -141,6 +156,7 @@
                     <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
                 </td>
                 <td>
+                    <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtCorreo">Ingrese su email.</asp:RequiredFieldValidator>
                     <asp:RegularExpressionValidator ID="rev_Correo" runat="server" ControlToValidate="txtCorreo" ErrorMessage="RegularExpressionValidator" ValidationExpression="^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$">Ingrese un correo electronico valido.</asp:RegularExpressionValidator>
                 </td>
                 <td>&nbsp;</td>
@@ -152,7 +168,10 @@
                 <td class="auto-style5">
                     <asp:TextBox ID="txt_CP" runat="server" MaxLength="4"></asp:TextBox>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvCP" runat="server" ControlToValidate="txt_CP">Ingrese el Codigo Postal.</asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txt_CP" ValidationExpression="^(?!0000)\d{4}$">Debe ingresar un Codigo Postal Válido.</asp:RegularExpressionValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -171,7 +190,9 @@
                     <asp:DropDownList ID="ddlLocalidades" runat="server">
                     </asp:DropDownList>
                 </td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:RequiredFieldValidator ID="rfvSeleccionLocalidad" runat="server" ControlToValidate="ddlLocalidades" ErrorMessage="RequiredFieldValidator">Debe Cargar al Menos una Localidad</asp:RequiredFieldValidator>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -205,7 +226,9 @@
             <tr>
                 <td class="auto-style4">&nbsp;</td>
                 <td class="auto-style5">&nbsp;</td>
-                <td>&nbsp;</td>
+                <td>
+                    <asp:Label ID="lblBienvenida" runat="server" Font-Size="XX-Large"></asp:Label>
+                </td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
@@ -219,7 +242,9 @@
                 <td>&nbsp;</td>
             </tr>
             <tr>
-                <td class="auto-style4">&nbsp;</td>
+                <td class="auto-style4">
+                    <asp:Button ID="btbInicio" runat="server" OnClick="btbInicio_Click" Text="Ir a Inicio .aspx" ValidationGroup="Redireccion" />
+                </td>
                 <td class="auto-style5">&nbsp;</td>
                 <td>&nbsp;</td>
                 <td>&nbsp;</td>
